@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="style.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <script>
+
+        /*ilk javascript kodu*/
+        /*ekrana bir pop-up göstermek için alert kullanılabilir*/
+        //alert("Merhaba");
+
+        // browserin developer tool kısmına bir log yazmak için 
+        console.log("Merhaba ben bir logum");
+
+        // sayfaya yazı yazdırmak için kullanılabilir!!!
+        document.write("merhaba ben javascript'im");
+
+        // degişken tanımlamak için 
+        var ilkDegisken = 10;
+
+        // değişken tanımlamada var keyword'ü kullanılır, javascript'te değişken tipleri yoktur!!
+        // sadece var keyword'ü vardır!!
+
+        // iki sayıyı topladık ve alet ile gösterdik!!!
+        // javascript ile aritmetik operatörler kullanılabilir!!!
+        var sayi1 =10;
+        var sayi2 =30;
+        var toplam = sayi1+sayi2;
+        //alert(toplam);
+
+        // if kullanımı
+        if(sayi1>5){
+            //alert("sayi1 5ten büyüktür")
+        }
+
+
+        // dizi tanımlama(5 elemanlı)
+        var isimler=["Ayşe","Fatma","Ali","Mehmet","Oğuz"];
+
+        // index numarası kullanılabilr
+        //alert(isimler[2]);
+
+        // class tanımı var mı ? yani sınıf yazabiliyor muyuz ? 
+
+        var ogrenci={
+
+            Ad:"Kemal",
+            SoyAd:"Yaşar",
+            Yas:15
+        }
+
+        // ogrencinin soy adını ekrana yazdıralım 
+        //alert(ogrenci.SoyAd);
+
+        // temel değişken tipleri : string,number,boolean,null,undefined!!!
+        //null olma durumu, verinin olmaamsı durumu
+        //undefined : aranılan şeyin olmama durumu
+
+        //metot yazalım(javascript dilinde kullanımı fonksiyondur!!)
+
+        // yazdığımız metodu çağıralım 
+        SayHello();
+
+
+        // topla metodunu kullanalım
+        var returnTopla = Topla(10,40);
+        //alert(returnTopla);
+
+        // döngü : for döngüsü : 
+        //for(var i =0;i<isimler.length;i++){
+            //alert(isimler[i]);
+        //}
+
+        // while döngüsü : 
+        var i = 0;
+       // while(i<isimler.length){
+        //    isimler[i];
+        //    i++;
+        //    if(isimler.length==5){
+        //        break;
+        //        console.log(i);
+        //    }
+        //}
+
+
+        function SayHello(){
+            //alert("Hello")
+        }
+        // geriye değer döndüren fonksiyon  parametrede alsın
+        function Topla(sayi1,sayi2){
+            return sayi1+sayi2;
+        }
+
+
+
+        function divikapat(){
+            //div'i gizlemek!!!
+
+
+        // aç kapat işlemlerinde, div'i tekrar yakalamamak için, metotların dışına, yani daha üst seviyeye aldık!!
+        var secilendiv =document.getElementById("birincidiv");
+            secilendiv.style.display="none";
+
+
+        
+            // div kapandıktan hemen 3 saniye sonra açılsın!!!
+            setTimeout(function(){
+
+                // bu bloğun içerisi belli sürede bir kere çalışır!!
+                secilendiv.style.display="block";
+
+            },5000); // 5000 değeri milisaniye cinsindendir. 5000 değeri 5 saniye demektir!!
+            // setTimeout bloğunun içerisi 5
+        }
+        function diviac(){
+            // divi açar!!
+
+        // aç kapat işlemlerinde, div'i tekrar yakalamamak için, metotların dışına, yani daha üst seviyeye aldık!!
+        var secilendiv =document.getElementById("birincidiv");
+            secilendiv.style.display="block";
+
+        }
+    </script>
+</head>
+<body>
+    
+    <!--Javascript : bir script dilidir!! 
+    Derleyicisi tarayıcıdır
+    
+    Sayfa içerisinde client-side yapılması gereken işler varsa, javascript ile yapılabilir!!
+    
+    client side- server side
+    
+    javascript : client side
+    aspnet mvc : server side
+    
+    javascript i server side yapabilmek için, nodejs teknolojisi çıktı!!-->
+
+    <!--Event : bir olay olduğunda, olaylar ne olabilir 
+    Bir butona basıldığında, div'in üstüne geldiğinde, input'in içerisine veri girdiğinde-->
+
+    <input ondblclick="alert('Merhaba butona double click oldu!!')" type="button" id="ilkbutton" value="Merhaba ben bir butonum">
+    
+    
+     <!--ikinci butona basılduğunda div'in kaybolmasını istiyorum -->
+    <input onclick="divikapat()" type="button" value="kapat">
+    <input onclick="diviac()" type="button" value="aç">
+    
+    <div id="birincidiv" class="div"></div>
+</body>
+</html>
